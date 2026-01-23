@@ -1,12 +1,12 @@
 kind: assertion
 apiVersion: api.ibm.com/v1
 metadata:
-  name: Create Task Assertions
+  name: tasks-create-assertions
   namespace: tasks-ngw
   version: "1.0"
   tags: []
 spec:
-  - name: HTTP status code
+  - name: HTTP Status Code
     key: responseStatus
-    value: 200
+    value: 201
     action: equals

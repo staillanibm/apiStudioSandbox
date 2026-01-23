@@ -1,7 +1,7 @@
 kind: test
 apiVersion: api.ibm.com/v1
 metadata:
-  name: Create task
+  name: tasks-tests
   namespace: tasks-ngw
   version: "1.0"
   tags: []
@@ -9,7 +9,7 @@ spec:
   api:
     $ref: tasks-ngw:tasks-api:1.0.0
   environment:
-    $ref: task-management:sandbox-ngw:1.0
+    $ref: tasks-ngw:tasks-ngw-environment:1.0
   request:
     - method: POST
       resource: /tasks
@@ -31,14 +31,12 @@ spec:
                 "targetDate": "2026-01-23",
                 "comment": "Et pas avec de l'eau de vie !"
             }
-      endpoint: https://task-management-api-product-sandbox-user-demo-org.nanogw.apps.itz-q037mu.infra01-lb.fra02.techzone.ibm.com/1.0.2
       assertions:
-        - $ref: task-management:Create Task Assertions:1.0
-      skipped: true
+        - $ref: tasks-ngw:tasks-create-assertions:1.0
     - method: GET
       resource: /tasks
       headers: []
       auth:
         noauth: true
       assertions:
-        - $ref: tasks-ngw:List Task Assertions:1.0
+        - $ref: tasks-ngw:tasks-list-assertions:1.0
