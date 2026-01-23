@@ -8,16 +8,16 @@ metadata:
 spec:
   api:
     $ref: tasks-ngw:tasks-api:1.0.0
-  environment:
-    $ref: tasks-ngw:tasks-ngw-environment:1.0
   request:
     - method: POST
       resource: /tasks
       headers:
         - key: content-type
           value: application/json
-        - key: accept
-          value: application/json
+        - key: X-IBM-Client-ID
+          value: ${clientId}
+        - key: X-IBM-Client-Secret
+          value: ${clientSecret}
       auth:
         noauth: true
       payload:
@@ -28,15 +28,23 @@ spec:
                 "assignee": "Fabrice",
                 "status": "todo",
                 "description": "Arroser les plantes",
-                "targetDate": "2026-01-23",
+                "targetDate": "2026-01-31",
                 "comment": "Et pas avec de l'eau de vie !"
             }
       assertions:
         - $ref: tasks-ngw:tasks-create-assertions:1.0
+#      skipped: true
     - method: GET
       resource: /tasks
-      headers: []
-      auth:
-        noauth: true
+      headers:
+        - key: X-IBM-Client-ID
+          value: ${clientId}
+        - key: X-IBM-Client-Secret
+          value: ${clientSecret}
+      auth: {}
       assertions:
         - $ref: tasks-ngw:tasks-list-assertions:1.0
+      var: []
+#      skipped: true
+  environment:
+    $ref: tasks-ngw:tasks-environment:1.0

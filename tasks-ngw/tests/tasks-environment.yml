@@ -1,0 +1,15 @@
+kind: environment
+apiVersion: api.ibm.com/v1
+metadata:
+  name: tasks-environment
+  namespace: tasks-ngw
+  version: "1.0"
+  tags: []
+spec:
+  variables:
+    - key: clientId
+      isSecret: false
+      value: fdea370e99a7b2ee54586f36a37b5dfc
+    - key: clientSecret
+      value: $(clientSecret)
+      isSecret: true

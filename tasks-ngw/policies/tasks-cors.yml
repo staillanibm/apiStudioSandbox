@@ -1,0 +1,13 @@
+kind: CORS
+apiVersion: api.ibm.com/v1
+metadata:
+  name: tasks-cors
+  namespace: tasks-ngw
+  version: '1.0'
+  tags: []
+  description: ''
+spec:
+  rules:
+    - action: allow
+      originList:
+        - '*'

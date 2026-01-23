@@ -1,0 +1,12 @@
+kind: Plan
+apiVersion: api.ibm.com/v1
+metadata:
+  name: tasks-plan-basic
+  namespace: tasks-ngw
+  version: '1.0'
+  tags: []
+  description: ''
+spec:
+  qos:
+    withQuota:
+      unlimited: {}

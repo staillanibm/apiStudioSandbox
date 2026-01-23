@@ -1,0 +1,17 @@
+kind: FreeFlowPolicySequence
+apiVersion: api.ibm.com/v1
+metadata:
+  name: tasks-policies
+  namespace: tasks-ngw
+  version: "1.0"
+  tags: []
+  labels:
+    gatewayTypes:
+      - nano
+spec:
+  main:
+    - $ref: tasks-ngw:tasks-cors:1.0
+    - $ref: tasks-ngw:tasks-extract-identity:1.0
+    - $ref: tasks-ngw:tasks-authenticate-subscription:1.0
+    - $ref: tasks-ngw:tasks-authorize-subscription:1.0
+    - $ref: tasks-ngw:tasks-invoke:1.0

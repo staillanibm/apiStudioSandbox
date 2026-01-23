@@ -1,0 +1,13 @@
+kind: Product
+apiVersion: api.ibm.com/v1
+metadata:
+  name: tasks-product
+  namespace: tasks-ngw
+  version: '1.3'
+  tags: []
+  description: ''
+spec:
+  apis:
+    - $ref: tasks-ngw:tasks-api:1.0.0
+  plans:
+    - $ref: tasks-ngw:tasks-plan-basic:1.0

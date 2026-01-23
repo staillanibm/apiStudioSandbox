@@ -1,13 +1,13 @@
-kind: FreeFlowPolicySequence
+kind: Authenticate
 apiVersion: api.ibm.com/v1
 metadata:
-  name: tasks-policies
+  name: tasks-authenticate-subscription
   namespace: tasks-ngw
-  version: "1.0"
+  version: '1.0'
   tags: []
   labels:
     gatewayTypes:
       - nano
 spec:
-  main:
-    - $ref: tasks-ngw:tasks-invoke:1.0
+  operation:
+    subscription: {}
