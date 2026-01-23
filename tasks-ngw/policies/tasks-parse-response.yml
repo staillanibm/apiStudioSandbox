@@ -1,7 +1,7 @@
 kind: Parse
 apiVersion: api.ibm.com/v1
 metadata:
-  name: Parse-vcuhfv
+  name: tasks-parse-response
   namespace: tasks-ngw
   version: '1.0'
   tags: []

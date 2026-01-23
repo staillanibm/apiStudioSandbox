@@ -17,3 +17,5 @@ spec:
     - $ref: tasks-ngw:tasks-invoke:1.0
     - $ref: tasks-ngw:tasks-parse-response:1.0
     - $ref: tasks-ngw:tasks-redact-response:1.0
+  monitoring:
+    $ref: tasks-ngw:tasks-telemetry:1.0
