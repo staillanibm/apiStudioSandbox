@@ -1,0 +1,16 @@
+kind: assertion
+apiVersion: api.ibm.com/v1
+metadata:
+  name: tasks-retrieve-assertions
+  namespace: tasks-ngw
+  version: "1.0"
+  tags: []
+spec:
+  - name: HTTP status code
+    key: responseStatus
+    value: 200
+    action: equals
+  - name: creator is valid
+    key: json().creator
+    value: ${taskCreator}
+    action: equals

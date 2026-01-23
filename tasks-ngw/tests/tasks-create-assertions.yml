@@ -10,3 +10,15 @@ spec:
     key: responseStatus
     value: 201
     action: equals
+  - name: id is in response
+    key: json()
+    value: id
+    action: haveProperty
+  - name: createdAt in response
+    key: json()
+    value: createdAt
+    action: haveProperty
+  - name: updatedAt in response
+    key: json()
+    value: updatedAt
+    action: haveProperty

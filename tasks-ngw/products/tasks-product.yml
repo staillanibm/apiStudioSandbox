@@ -3,7 +3,7 @@ apiVersion: api.ibm.com/v1
 metadata:
   name: tasks-product
   namespace: tasks-ngw
-  version: '1.5'
+  version: '1.6'
   tags: []
   description: ''
 spec:

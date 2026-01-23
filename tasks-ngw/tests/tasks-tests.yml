@@ -20,6 +20,13 @@ spec:
           value: ${clientSecret}
       auth:
         noauth: true
+      assertions:
+        - $ref: tasks-ngw:tasks-create-assertions:1.0
+      var:
+        - key: taskId
+          value: responseBody.id
+        - key: taskCreator
+          value: responseBody.creator
       payload:
         raw:
           json: |-
@@ -31,9 +38,7 @@ spec:
                 "targetDate": "2026-01-31",
                 "comment": "Et pas avec de l'eau de vie !"
             }
-      assertions:
-        - $ref: tasks-ngw:tasks-create-assertions:1.0
-#      skipped: true
+    #      skipped: true
     - method: GET
       resource: /tasks
       headers:
@@ -45,6 +50,20 @@ spec:
       assertions:
         - $ref: tasks-ngw:tasks-list-assertions:1.0
       var: []
-#      skipped: true
+    - method: GET
+      resource: /tasks/{taskId}
+      headers:
+        - key: X-IBM-Client-ID
+          value: ${clientId}
+        - key: X-IBM-Client-Secret
+          value: ${clientSecret}
+      auth:
+        noauth: true
+      assertions:
+        - $ref: tasks-ngw:tasks-retrieve-assertions:1.0
+      parameters:
+        - key: taskId
+          value: ${taskId}
+  #      skipped: true
   environment:
     $ref: tasks-ngw:tasks-environment:1.0

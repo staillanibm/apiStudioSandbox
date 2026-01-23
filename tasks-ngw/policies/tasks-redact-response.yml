@@ -14,4 +14,4 @@ spec:
     body:
       captures:
         jsonata:
-          - id
+          - updatedAt
