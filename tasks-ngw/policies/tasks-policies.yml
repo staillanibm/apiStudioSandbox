@@ -3,7 +3,7 @@ apiVersion: api.ibm.com/v1
 metadata:
   name: tasks-policies
   namespace: tasks-ngw
-  version: "1.0"
+  version: '1.0'
   tags: []
   labels:
     gatewayTypes:
@@ -15,3 +15,5 @@ spec:
     - $ref: tasks-ngw:tasks-authenticate-subscription:1.0
     - $ref: tasks-ngw:tasks-authorize-subscription:1.0
     - $ref: tasks-ngw:tasks-invoke:1.0
+    - $ref: tasks-ngw:tasks-parse-response:1.0
+    - $ref: tasks-ngw:tasks-redact-response:1.0
