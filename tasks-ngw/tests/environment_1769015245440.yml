@@ -2,7 +2,7 @@ kind: environment
 apiVersion: api.ibm.com/v1
 metadata:
   name: sandbox-ngw
-  namespace: task-management
+  namespace: tasks-ngw
   version: "1.0"
   tags: []
 spec:

@@ -2,8 +2,8 @@ kind: assertion
 apiVersion: api.ibm.com/v1
 metadata:
   name: Create Task Assertions
-  namespace: task-management
-  version: '1.0'
+  namespace: tasks-ngw
+  version: "1.0"
   tags: []
 spec:
   - name: HTTP Status Code

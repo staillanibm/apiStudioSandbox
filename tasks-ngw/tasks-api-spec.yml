@@ -1,7 +1,7 @@
 openapi: 3.0.0
 info:
-  title: task-management-api
-  version: 1.0.2
+  title: tasks-api
+  version: 1.0.0
   description: Task management API
   contact:
     email: stephane.tailland@ibm.com

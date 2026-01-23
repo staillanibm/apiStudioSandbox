@@ -2,12 +2,12 @@ kind: test
 apiVersion: api.ibm.com/v1
 metadata:
   name: Create task
-  namespace: task-management
+  namespace: tasks-ngw
   version: "1.0"
   tags: []
 spec:
   api:
-    $ref: task-management:task_management_api:1.0.0
+    $ref: tasks-ngw:tasks-api:1.0.0
   environment:
     $ref: task-management:sandbox-ngw:1.0
   request:
@@ -34,12 +34,11 @@ spec:
       endpoint: https://task-management-api-product-sandbox-user-demo-org.nanogw.apps.itz-q037mu.infra01-lb.fra02.techzone.ibm.com/1.0.2
       assertions:
         - $ref: task-management:Create Task Assertions:1.0
+      skipped: true
     - method: GET
       resource: /tasks
       headers: []
       auth:
         noauth: true
       assertions:
-        - $ref: task-management:List Task Assertions:1.0
-      endpoint: https://task-management-api-product-sandbox-user-demo-org.nanogw.apps.itz-q037mu.infra01-lb.fra02.techzone.ibm.com/1.0.1
-      skipped: true
+        - $ref: tasks-ngw:List Task Assertions:1.0

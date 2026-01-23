@@ -1,0 +1,13 @@
+kind: API
+apiVersion: api.ibm.com/v1
+metadata:
+  name: tasks-api
+  namespace: tasks-ngw
+  version: 1.0.0
+  tags: []
+  type: REST
+spec:
+  api-spec:
+    $path: ./tasks-api-spec.yml
+  policy-sequence:
+    - $ref: tasks-ngw:tasks-policies:1.0
