@@ -15,10 +15,6 @@ projects:
     description: ''
     tags: []
     lastUpdated: 1770880508572
-  agentDemo:
-    description: ''
-    tags: []
-    lastUpdated: 1774364460154
   stt-demo:
     description: ''
     tags: []
